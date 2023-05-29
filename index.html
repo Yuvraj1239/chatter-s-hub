@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Own Chat Application</title>
+  <script src="http://localhost:8000/socket.io/socket.io.js" defer></script>
+  <script src="js/client.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      #navbar ul {
+        display: none;
+      }
+
+      #navbar.active ul {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div id="logo">
+      <img src="logo2.png" alt="myonlinemeal.com">
+    </div>
+    <ul>
+      <li class="item"><a href="aboutus.html">About Us</a></li>
+      <li class="item"><a href="contactus.html">Contact Us</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleNavbar()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div class="container2">
+      <div class="message left">computer: Hi, you will see the messages you send on this side</div>
+      <div class="message right">computer: Hi, you will see the messages you receive on this side</div>
+    </div>
+  </div>
+  
+  <div class="send">
+    <form action="#" id="send-container">
+      <label>
+        <input type="text" name="messageInp" id="messageInp">
+      </label>
+      <button class="btn" type="submit">Send</button>
+    </form>
+  </div>
+
+  <script>
+    // Function to toggle the navbar menu for smaller screens
+    function toggleNavbar() {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
